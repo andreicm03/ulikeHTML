@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <title>Finn spraak</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <p>Hvilket land kommer du fra?</p>
+        <select id="lstLand" size = "2">
+            <option value="norsk">Norge</option>
+            <option value="rumensk">Romania</option>
+            <option value="engelsk">Storbrittania</option>
+            <option value="indisk">India</option>
+        </select>
+        <p id="melding"></p>
+
+        <script>
+            window.onload = oppstart
+
+            function oppstart(){
+                let listeLand = document.getElementById("lstLand")
+                listeLand.onchange = visSpraak;
+            }
+
+            function visSpraak (){
+                let melding = document.getElementById("melding")
+                let listeLand = document.getElementById("lstLand")
+
+                melding.innerHTML = "Da snakker du mest sannsynlig" +  
+                " " + listeLand.value + "."
+            }
+        </script>
+    </body>
+</html>

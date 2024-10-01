@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adjective</title>
+    </head>
+    <body>
+        <script>
+            let adjarray = []
+            while (true){
+            let adjective = prompt("Write an adjective")
+            adjarray.push(adjective)
+            if (adjarray.length == 6){
+                console.log("The loop has ended.")
+                break
+            }
+            }
+            console.log(adjarray)
+            /*Kanskje det er mulig å automatisere det enda mer med en for-løkke.*/
+            document.write(`Kjære alle dere ${adjarray[0]} menneskene i vår ${adjarray[1]}. familie,\
+Min kjære ${adjarray[2]} kone og jeg, den ${adjarray[3]} mannen hennes, ønsker  dere velkommen  til denne ${adjarray[4]} festen. Vi har lenge gledet oss til å se\
+dere alle ${adjarray[5]} slektningene våre her i vårt…………………hjem. Spesielt er vi glade for at den…………………`)
+        </script>
+    </body>
+</html>

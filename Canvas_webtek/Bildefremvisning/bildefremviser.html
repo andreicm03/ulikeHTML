@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bildefremviser</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <img src="#" id="bilde"/>
+
+        <p><input type="radio" name="bildeliste" id="rbtnBilde1" value="img/bilde1.jfif"/>
+        Bilde 1
+        </p>
+
+        <p><input type="radio" name="bildeliste" id="rbtnBilde2" value="img/bilde2.jfif"/>
+        Bilde 2
+        </p>
+
+        <p><input type="radio" name="bildeliste" id="rbtnBilde3" value="img/bilde3.jfif"/>
+        Bilde 3
+        </p>
+
+        <script>
+            window.onload = oppstart
+
+            function oppstart() {
+                let bilde1 = document.getElementById("rbtnBilde1") /*Globale verdier kan
+    brukes, men dette vil påvirke global scope.*/
+                let bilde2 = document.getElementById("rbtnBilde2")
+                let bilde3 = document.getElementById("rbtnBilde3")
+
+                bilde1.onclick = visBilde1
+                bilde2.onclick = visBilde2
+                bilde3.onclick = visBilde3
+            }
+
+            function visBilde1 () {
+                let bilde = document.getElementById("bilde")
+                let bilde1 = document.getElementById("rbtnBilde1")
+                let bilde2 = document.getElementById("rbtnBilde2")
+                let bilde3 = document.getElementById("rbtnBilde3")
+
+                bilde.src = bilde1.value
+            }
+
+            function visBilde2 () {
+                let bilde = document.getElementById("bilde")
+                let bilde1 = document.getElementById("rbtnBilde1")
+                let bilde2 = document.getElementById("rbtnBilde2")
+                let bilde3 = document.getElementById("rbtnBilde3")
+
+                bilde.src = bilde2.value
+            }
+
+            function visBilde3 () {
+                let bilde = document.getElementById("bilde")
+                let bilde1 = document.getElementById("rbtnBilde1")
+                let bilde2 = document.getElementById("rbtnBilde2")
+                let bilde3 = document.getElementById("rbtnBilde3")
+
+                bilde.src = bilde3.value
+            }
+        </script>
+    
+    
+    </body>
+</html>

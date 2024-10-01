@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Farger</title>
+        <meta charset="utf-8"/>
+
+        <style>
+            .groenn{
+                color:green;
+            }
+            .blaa {
+                color:blue;
+            }
+            .roed{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="melding">Hei verden</h1>
+        <p>Klikk på ønsket farge:</p>
+        <ul>
+            <li id="groenn" class="groenn">Grønn</li>
+            <li id="blaa" class="blaa">Blå</li>
+            <li id="roed" class="roed">Rød</li>
+        </ul>
+        <script>
+            window.onload = oppstart;
+
+            function oppstart(){
+                let green = document.getElementById("groenn")
+                let blue = document.getElementById("blaa")
+                let red = document.getElementById("roed")
+
+                green.onclick = visGroenn;
+                blue.onclick = visBlaa;
+                red.onclick = visRoed;
+            }
+
+            function visGroenn(){
+                let melding = document.getElementById("melding")
+                melding.className = "groenn"
+            }
+
+            function visBlaa(){
+                let melding = document.getElementById("melding")
+                melding.className = "blaa"
+            }
+
+            function visRoed(){
+                let melding = document.getElementById("melding")
+                melding.className = "roed"
+            }
+        </script>
+    </body>
+</html>

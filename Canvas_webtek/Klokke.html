@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Klokketest</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <p>Klokka er nå: <span id="klokkeutskrift">Kunne ikke vise tidspunkt
+        </span></p>
+        <script>
+            window.onload = oppdater; /*Dette presser programmet til å laste inn siden*/
+
+            function oppdater(){
+                let tid = new Date();
+                document.getElementById("klokkeutskrift").innerHTML = tid.getHours() +
+                ":" + tid.getMinutes() + ":" + tid.getSeconds();
+
+                setTimeout(oppdater,1000) /*Oppdater klokkeslettet på en presisjon av
+                1000 milisekunder. Det er live oppdatering.*/
+            }
+        </script>
+    </body>
+</html>

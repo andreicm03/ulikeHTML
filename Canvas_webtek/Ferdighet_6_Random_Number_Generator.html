@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enkel prototypebygging</title>
+        <meta charset = "utf-8"/>
+    </head>
+    <body>
+        <div id="innhold">
+            Jeg tenker på et tall mellom 1 og 20. Tipp hvilket!
+            <input type="text" id="bruker"/> 
+            <button onclick="tipp1()">Tipp</button>
+        </div>
+        <script>
+            let tall = Math.trunc(((Math.random() *20)+ 1)) /*Dette er metoden for å danne tilfeldige tall. Math.trunc fjerner alle desimaltall.*/
+
+            function tipp1(){
+                let bruker = document.getElementById("bruker").value
+                let innhold = document.getElementById("innhold")
+
+                // if(tall > Number(bruker)){ /*Jeg må bruke not operatoren for at det skal stemme. Det stemmer ikke */
+                //     innhold.innerHTML = "Du tippet for lavt, tipp høyere."
+                // }
+                // else{
+                //     if(tall < Number(bruker)){  /* Det er noe feil her, er de uavhengige, ja.*/
+                //     innhold.innerHTML = "Du tippet for høyt, tipp lavere."
+                // }
+                // else{
+                //     if (tall == Number(bruker)){
+                //     innhold.innerHTML = `Du tippet riktig, tallet var ${tall}.`
+                // }
+                // }
+                // }
+
+                if(bruker < tall ){ /*Jeg må bruke not operatoren for at det skal stemme. Det stemmer ikke */
+                    innhold.innerHTML = "Du tippet for lavt, tipp høyere."
+                    innhold.innerHTML += "<br/>" + `<input type="text" id="bruker"/> 
+            <button onclick="tipp1()">Tipp</button>`
+/*Jeg får problemer med programmet. Man kan ikke ha uavhengige hendelser, må danne if else if else blokker.*/
+                }
+                else if(bruker > tall ){ /*begge blir besvart med false, noe er feil med sammenligningen.*/
+                    innhold.innerHTML = "Du tippet for høyt, tipp lavere."
+                    innhold.innerHTML += "<br/>" + `<input type="text" id="bruker"/> 
+            <button onclick="tipp1()">Tipp</button>`
+                }
+                else{
+                    innhold.innerHTML = `Du tippet riktig, tallet var ${tall}.`
+                }
+
+                console.log(parseInt(bruker)) /*Dette blir oppgitt med NaN not a number og dermed er dette uten besvarelse.*/
+                console.log(parseInt(bruker) < tall)
+                console.log(parseInt(bruker) > tall)
+
+                console.log(tall)
+            }
+            /*Jeg kan ikke heller overføre verdien med parseInt, skal jeg kun sammenligne det basert på verdi og ikke datatype? Det virker slik ut.*/
+            /*Det ser ut som når verdier kommer utenfor javascript må vi benytte parseInt() function.*/
+            /*Ordningen på disse stemmer ikke, vi må ordne de riktig slik at de oppfører seg riktig. Jeg tror ordningen på tallene, vi må sammenli
+            gne med fast tall.*/
+            /*Programmet vårt fungerer ikke, det ser ut som Javascript er ikke glad i uavhengige if-setninger.*/
+            /*Jeg ser feilen, det er bruker variabelen som mangler .value metoden for at den skal fungere.*/
+            /*Nå er den giugiuc bonbon.*/
+            /*Jeg ser at den setter verdien utenfor, dermed må vi ta variabelen med dannelse av verdi utenfor funksjonen.*/
+            /*Greit programmet har god funksjonalitet, det er bare utseende messig som må forbedres og det vil være perfekt for unger.*/
+        </script>
+    </body>
+</html>

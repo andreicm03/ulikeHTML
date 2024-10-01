@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Min artig</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <p>Hva er svaret på livet, universet og alt mulig?</p>
+        <p id="svar">Klikk her</p>
+        <script>
+            window.onload = oppstart;
+            
+            function oppstart(){
+                document.getElementById("svar").onclick = visSvar;
+            }
+/* jeg vil heller lage variabler for å ikke være nødvendig å huske hele koden. */
+            function visSvar(){
+                document.getElementById("svar").innerHTML = "Svaret er 42"
+            }
+        </script>
+    </body>
+</html>

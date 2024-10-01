@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vismelding</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <p id="melding">Dette er en test.</p>
+        <p><input type="checkbox" id="chkVisMelding"/>Vis melding</p>
+
+        <script>
+            window.onload = oppstart;
+
+            function oppstart() {
+                let melding = document.getElementById("melding")
+                let chkVisMelding = document.getElementById("chkVisMelding")
+                melding.style.visibility = "hidden";
+                chkVisMelding.onchange = visMelding; 
+            }
+
+            function visMelding(){
+                let melding = document.getElementById("melding")
+                let chkVisMelding = document.getElementById("chkVisMelding")
+                if (chkVisMelding.checked === true){ /*Forsiktig med triple sign. Den
+                    undersøker type og verdi samtidig.*/
+                    melding.style.visibility = "visible"
+                }
+                else{
+                    melding.style.visibility = "hidden"
+                }
+            }
+        </script>
+    </body>
+</html>

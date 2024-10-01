@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Rundetider</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <h1>Rundetider</h1>
+        <p id="leggtil">Legg til ny tid</p>
+        <h3>Tider:</h3>
+        <ol id="tider">
+        </ol>
+
+        <script>
+            window.onload = oppstart;
+
+            function oppstart(){
+                document.getElementById("leggtil").onclick = leggtil;
+            }
+
+            function leggtil(){
+                let tid = new Date(); /*Lager ny dato.*/
+                let newElement = document.createElement("li");
+
+                newElement.innerHTML = tid.getHours() + ":" +
+                tid.getMinutes() + ":" + tid.getSeconds(); /*Skriver inn i liste elemen
+                tet.*/
+
+                let Times = document.getElementById("tider")
+                Times.appendChild(newElement); /*Legger til
+                i ordered list, her ønsker jeg å benytte en variabel.*/
+            }
+        </script> 
+    </body>
+</html>

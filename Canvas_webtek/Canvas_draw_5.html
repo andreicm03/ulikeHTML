@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Canvas_draw_5</title>
+        <meta charset = "utf-8"/>
+        <style>
+            #canvas{
+                border: 2px solid grey;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas" height="200" width="200"></canvas>
+        <script>
+            let canvas = document.getElementById("canvas");
+            let ctx = canvas.getContext("2d");
+
+            /*Vi må lage en funksjon for å tegne
+            den store sirkelen.*/
+            /*Jeg husker ikke dessverre de andre parametrene
+            som kreves unntatt x, y og radius, det var noe
+            også om clockwise eller counterclockwise.*/
+            function drawCircle(){
+                ctx.strokeStyle = "black";
+                ctx.lineWidth = 1;
+                let circle = {
+                    x:100,
+                    y:100,
+                    radius:100
+                }
+                ctx.beginPath()
+                ctx.arc(circle.x, circle.y, circle.radius, 0, 360, false)
+                ctx.stroke()
+            }
+            drawCircle()
+            /*Den horisontale linjen for øynene*/
+            ctx.strokeStyle = "black"
+            ctx.lineWidth = 1
+
+            ctx.moveTo(60,75)
+            ctx.lineTo(150,75)
+            
+            ctx.stroke()
+            /*Smilet ved personen antar jeg at det er en bezier 
+            curve.*/
+
+            function drawTwoCircles(){
+                ctx.strokeStyle = "black"
+                ctx.lineWidth = 1
+                let circle1 = {
+                    x:65,
+                    y:75,
+                    rad:5
+                }
+                let circle2={
+                    x:145,
+                    y:75,
+                    rad:5
+                }
+                ctx.beginPath()
+                ctx.arc(circle1.x, circle1.y, circle1.rad, 0, 360, false)
+                ctx.arc(circle2.x, circle2.y, circle2.rad, 0, 360, false)
+                ctx.stroke()
+            }
+            drawTwoCircles()
+
+            /*Nå må jeg informere meg om bezier kurven, 
+            nei jeg kan tegne en halvsirkel.*/
+
+            function drawHalfCircle(){
+                ctx.strokeStyle = "black";
+                ctx.lineWidth = 1;
+                let halfcircle= {
+                    x:100,
+                    y:100,
+                    rad: 75
+                }
+                ctx.beginPath()
+                ctx.arc(halfcircle.x, halfcircle.y, halfcircle.rad, 0, Math.PI, false)
+                /*Bruh 180 grader ser ikke ut til å interessere,
+                programmet, må undersøke hvordan jeg tegner en 
+                halvsirkel med JavaScript.*/
+                ctx.stroke()
+            }
+            drawHalfCircle()
+
+            /*Jeg har tegnet alle delene, nå skal vi ta en titt
+            på tegningen.*/
+
+            /*Ooo kan jeg ikk bruke objekter...*/
+            /*Objektene i JavaScript bruker , og ikke ;...*/
+            /*Jeg ser hvorfor jeg måtte bruker Math.Pi.*/
+            /*Jeg endret slik at øyenene er innenfor linjen
+            men øyenene er ikke sentrerte.*/
+
+            /*Nå ser den bedre ut.*/
+            /*Jeg har brukt moveTo kun for den horisontale
+            linjen.*/
+            /*Forfatteren bruker moveTo function ved alle
+            delene, men det er riktig hvordan vi gjorde det også.*/
+        </script>
+
+        
+    </body>
+</html>
